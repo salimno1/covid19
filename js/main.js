@@ -5,6 +5,7 @@ let caseDiv = document.getElementById("case");
 let deathDiv = document.getElementById("death");
 let recoveredDiv = document.getElementById("recovered");
 let jokeBtn = document.getElementById("joke-btn");
+let jokeDiv = document.getElementById("joke-div");
 
 async function fetchData() {
   let inputValue = inputField.value;
@@ -30,6 +31,24 @@ async function fetchData() {
   recoveredDiv.innerHTML = `<h5>Recovered</h5><p>${recovered}</p>`;
 }
 
+async function fetchJoke() {
+  let response = await fetch(
+    `https://api.chucknorris.io/jokes/random?category=sport`
+  );
+
+  let joke = await response.json();
+
+  let randomJoke = joke.value;
+  let zlatan = randomJoke.replace("Chuck Norris", "Zlatan");
+  console.log(randomJoke);
+
+  jokeDiv.innerHTML = zlatan;
+}
+
 searchBtn.addEventListener("click", function () {
   fetchData();
+  jokeBtn.style.display = "block";
+});
+jokeBtn.addEventListener("click", function () {
+  fetchJoke();
 });
