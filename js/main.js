@@ -39,7 +39,7 @@ async function fetchJoke() {
   let joke = await response.json();
 
   let randomJoke = joke.value;
-  let zlatan = randomJoke.replace("Chuck Norris", "Zlatan");
+  let zlatan = randomJoke.replace(/Chuck Norris/g, "Zlatan");
   console.log(randomJoke);
 
   jokeDiv.innerHTML = zlatan;
@@ -48,6 +48,7 @@ async function fetchJoke() {
 searchBtn.addEventListener("click", function () {
   fetchData();
   jokeBtn.style.display = "block";
+  jokeDiv.style.display = "block";
 });
 jokeBtn.addEventListener("click", function () {
   fetchJoke();

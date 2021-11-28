@@ -5,13 +5,13 @@ body {
 #joke-btn {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 #joke-div {
   padding-left: 25px;
   padding-right: 25px;
-  padding-top: 25px;
+  padding-top: 40px;
 }
 
 #content {
@@ -47,6 +47,7 @@ h4 {
 #inner-content {
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 #recovered :nth-child(2) {
   color: rgb(29, 194, 43);
