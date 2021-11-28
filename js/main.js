@@ -4,6 +4,7 @@ let contentOfBody = document.getElementById("content");
 let caseDiv = document.getElementById("case");
 let deathDiv = document.getElementById("death");
 let recoveredDiv = document.getElementById("recovered");
+let jokeBtn = document.getElementById("joke-btn");
 
 async function fetchData() {
   let inputValue = inputField.value;
