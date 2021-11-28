@@ -29,6 +29,9 @@ async function fetchData() {
   caseDiv.innerHTML = `<h5>Cases</h5> <p>${cases}</p>`;
   deathDiv.innerHTML = `<h5>Deaths</h5><p>${deaths}</p>`;
   recoveredDiv.innerHTML = `<h5>Recovered</h5><p>${recovered}</p>`;
+
+  jokeBtn.style.display = "block";
+  jokeDiv.style.display = "block";
 }
 
 async function fetchJoke() {
@@ -47,8 +50,6 @@ async function fetchJoke() {
 
 searchBtn.addEventListener("click", function () {
   fetchData();
-  jokeBtn.style.display = "block";
-  jokeDiv.style.display = "block";
 });
 jokeBtn.addEventListener("click", function () {
   fetchJoke();
