@@ -6,6 +6,7 @@ let deathDiv = document.getElementById("death");
 let recoveredDiv = document.getElementById("recovered");
 let jokeBtn = document.getElementById("joke-btn");
 let jokeDiv = document.getElementById("joke-div");
+let countryDiv = document.getElementById("country-div");
 
 async function fetchData() {
   let inputValue = inputField.value;
@@ -25,7 +26,9 @@ async function fetchData() {
   let cases = data["Total Cases_text"];
   let deaths = data["Total Deaths_text"];
   let recovered = data["Total Recovered_text"];
+  let country = data["Country_text"];
 
+  countryDiv.innerHTML = `<h5>Country</h5> <p>${country}</p>`;
   caseDiv.innerHTML = `<h5>Cases</h5> <p>${cases}</p>`;
   deathDiv.innerHTML = `<h5>Deaths</h5><p>${deaths}</p>`;
   recoveredDiv.innerHTML = `<h5>Recovered</h5><p>${recovered}</p>`;
